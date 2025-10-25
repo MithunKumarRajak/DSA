@@ -1,6 +1,6 @@
-# arr = [5, 2, 8, 1]
-# arr = ['apple', 'kiwi', 'banana', 'orange']
-arr = [(2, 'apple'), (1, 'banana'), (3, 'Cucumber'), (2, 'date')]
+arr = [5, 2, 8, 1]
+arr2 = ['apple', 'banana', 'cucumber', 'date']
+arr3 = [(2, 'apple'), (1, 'banana'), (3, 'cucumber'), (2, 'date')]
 
 
 def bubble_sort_key(arr, key=None, reverse=False):
@@ -25,17 +25,21 @@ def bubble_sort_key(arr, key=None, reverse=False):
 
 
 # Sort numbers normally
-# due to tuple returned by function and unpacking here
+# due to packed tuple returned by function and unpacking here
 sorted_arr, total_swaps = bubble_sort_key(arr)
+reverse, total_swaps = bubble_sort_key(arr, reverse=True)
 print("Sorted Array:", sorted_arr)
 print("Total swaps:", total_swaps)
 
+# sorting tuple by reverse order
+print("Reversed order:", reverse)
+
 
 # Sort strings by length
-sorted_arr, total_swaps = bubble_sort_key(arr, key=len)
+sorted_arr, total_swaps = bubble_sort_key(arr2, key=len)
 print("Sorted by length:", sorted_arr)
 
 
 # Sort tuples by second element or alphabetically
-sorted_arr, total_swaps = bubble_sort_key(arr, key=lambda x: x[1])
+sorted_arr, total_swaps = bubble_sort_key(arr2, key=lambda x: x[1])
 print("Sorted by second element:", sorted_arr)
